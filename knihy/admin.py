@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Kniha, Zanr #Importujeme si modely
 
-# Register your models here.
+#Modely registrujeme
+admin.site.register(Kniha)
+admin.site.register(Zanr)
