@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1> {{ kniha.nazev }} </h1>
+    <small> Autor: {{ kniha.autor }} </small>
+    <h3> Žánr: {{kniha.zanr.nazev_zanru}} </h3>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+    {% for knihy in kniha %}
+        <a href=/knihy/{{knihy.id}}/kniha_detail/> Název: {{knihy.nazev}} <br> </a>
+    {% endfor %}
+{% endblock %}
