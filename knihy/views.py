@@ -5,8 +5,7 @@ def index(request):
     return HttpResponse('test0222')
 """
 
-from django.shortcuts import render
-from django.shortcuts import render, redirect, render_to_response
+from django.shortcuts import render, redirect
 from django.views import generic
 from .models import Kniha
 from .forms import KnihaForm
@@ -41,4 +40,5 @@ class CreateKniha(generic.edit.CreateView):
         form = self.form_class(request.POST)
         if form.is_valid():
             form.save(commit=True)
+            return redirect("/")
         return render(request, self.template_name, {"form":form})

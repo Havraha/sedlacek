@@ -21,6 +21,5 @@ from . import url_handlers
 urlpatterns = [
     path('', views.KnihaIndex.as_view()),
     path("knihy/<int:pk>/kniha_detail/", views.CurrentKnihaView.as_view()),
-    path("create_kniha", views.CreateKniha.as_view()),
-    path("", url_handlers.index_handler),
+    path("nova_kniha/", views.CreateKniha.as_view()),
 ]

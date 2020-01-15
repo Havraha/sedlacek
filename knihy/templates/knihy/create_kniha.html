@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+    <h2>Vložte novou knihu</h2><br>
 <form method="POST">
     {% csrf_token %}
     {{ form|crispy }}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <{% load staticfiles %}
+    {% load static %}
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = "text/css"/>
@@ -12,17 +12,21 @@
 <body>
     <nav>
         <div class="flex_box">
-            <div class="nav_item"><a href=/knihy/{{knihy.id}}/kniha_detail/>Index</a></div>
-            <div class="nav_item"><a href={% url "nova_kniha" %}>Nová kniha</a></div>
+            <div class="nav_item"><a href=/>Index</a></div>
+            <div class="nav_item"><a href=/nova_kniha/>Nová kniha</a></div>
         </div>
     </nav>
+    <br>
     <div class="content">
     {% block content %}
 
     {% endblock %}
     </div>
+
+
+
     <footer>
-        Footer
+        Sedlacek 2020
     </footer>
 
 </body>
