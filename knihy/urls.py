@@ -22,4 +22,5 @@ urlpatterns = [
     path('', views.KnihaIndex.as_view()),
     path("knihy/<int:pk>/kniha_detail/", views.CurrentKnihaView.as_view()),
     path("nova_kniha/", views.CreateKniha.as_view()),
+    path("oblibene_knihy/", views.OblibeneKnihy.as_view()),
 ]

@@ -25,6 +25,13 @@ class CurrentKnihaView(generic.DetailView):
     model = Kniha
     template_name = "knihy/kniha_detail.html"
 
+class OblibeneKnihy(generic.ListView):
+    template_name = "knihy/oblibene_knihy.html"
+    context_object_name = "kniha"
+
+    def get_queryset(self):
+        return Kniha.objects.all().order_by("-id")
+
 class CreateKniha(generic.edit.CreateView):
 
     form_class = KnihaForm

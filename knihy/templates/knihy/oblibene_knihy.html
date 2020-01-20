@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+     <h2>Oblíbené knihy</h2><br>
+
+    <table>
+    <tr>
+    <td>název knihy</td><td>oblíbené</td>
+    </tr>
+    {% for knihy in kniha %}
+        <tr>
+        <td><div id="text_{{knihy.id}}">Název: {{knihy.nazev}}</div></td><td align="center">
+            <input type="checkbox" id="check_{{knihy.id}}" onclick="oblibene({{knihy.id}})"></td>
+        </tr>
+        <script>
+            console.log(localStorage.getItem("kniha_id_{{knihy.id}}"))
+            if (localStorage.getItem("kniha_id_{{knihy.id}}") == 1) {
+                document.getElementById("check_{{knihy.id}}").checked = true;
+                document.getElementById("text_{{knihy.id}}").style.fontWeight = "bold";
+            }
+        </script>
+    {% endfor %}
+    </table>
+
+    <script>
+    function oblibene(kniha_id) {
+        var kniha_obl_checkbox = document.getElementById("check_" + kniha_id);
+        var kniha_obl_text = document.getElementById("text_" + kniha_id);
+
+        if (kniha_obl_checkbox.checked == true){
+            kniha_obl_text.style.fontWeight = "bold";
+            localStorage.setItem("kniha_id_" + kniha_id, 1);
+        } else {
+            kniha_obl_text.style.fontWeight = "normal";
+            localStorage.removeItem("kniha_id_" + kniha_id);
+        }
+    }
+    </script>
+{% endblock %}
